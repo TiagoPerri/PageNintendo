@@ -1,26 +1,88 @@
-
-.compreJaCx{
+.header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.header .logo{
+    height: 55px;
+}
+.header-info{
+    display: flex;
+    align-items: center;
+}
+.header-info a{
+    font-family: "Museo-Bold";
+    font-size: 14px;
+}
+.header-info a, .header-info i{
+    color: #484848;
+}
+.header-info a:hover, .header-info i:hover, .login:hover, .support:hover{
+    color: #E60012;
+}
+.support{
+    margin-right: 20px;
+}
+.support a{
+    display: flex;
+}
+.support i{
+    margin-right: 7px;
+}
+.login i{
+    margin-right: 7px;
+}
+.login{
+    margin-right: 20px;
+}
+.login a{
+    display: flex;
+}
+.div-centro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    margin: auto;
+    height: 140px;
+    border-bottom: 0.5px solid #DADADA;
+}
+.div-centro h1{
+    font-size: 2.375rem;
+    color:#484848;
+    font-family: "Museo-Bold";
+    margin-right: 20px;
+}
+.btnComprar{
     background-color:#e60012;
-    width: 169.44px;
-    height: 44px;
-    font-size: 23px;
+    width: 170px;
+    height: 45px;
     padding: 8px;
     border-radius: 4px;
-    border-style: groove;
-    color: white;
-    display:inline-block;
-    
-}
-
-.jaDisp{
-    font-size: 36px;
-    color: gray;
-}
-
-.centrao{
-    text-align: center;
+    display: flex;
     align-items: center;
-    display: inline;
-    
+    justify-content: center;
+    display: flex;
+    justify-content: space-around;
 }
-
+.btnComprar p{
+    color: white; 
+    font-size: 16px;
+    font-family: "Museo-Bold";
+}
+.btnComprar i{
+    color: white;
+    font-size: 23px;
+}
+.btnComprar:hover{
+    background-color: #AC000D;
+    width: 178px;
+    height: 52px;
+}
+.card-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: ;
+}
