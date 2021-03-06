@@ -1,0 +1,26 @@
+
+.compreJaCx{
+    background-color:#e60012;
+    width: 169.44px;
+    height: 44px;
+    font-size: 23px;
+    padding: 8px;
+    border-radius: 4px;
+    border-style: groove;
+    color: white;
+    display:inline-block;
+    
+}
+
+.jaDisp{
+    font-size: 36px;
+    color: gray;
+}
+
+.centrao{
+    text-align: center;
+    align-items: center;
+    display: inline;
+    
+}
+
