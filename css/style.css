@@ -138,3 +138,26 @@ footer a{
 footer a:hover{
     text-decoration: underline;
 }
+
+/* responsividade mobile  */
+@media screen and (max-width: 768px){
+    .card-container{
+        height: 620px;
+    }
+    footer p{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 425px){
+    .header{
+        height: 54px;
+    }
+    .div-centro{
+        flex-flow: column;
+        justify-content: space-around;    
+    }
+    .card-container{
+        height: 1120px;
+        justify-content: center;
+    }
+}
