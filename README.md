@@ -9,4 +9,4 @@ Tiago Perri Gonçalves de Oliveira
 Leonardo Carvalho Goulart
 
 O projeto será hospedado na plataforma de hosting Netlify;
-URL do projeto:
+URL do projeto: https://projweb-nintendo.netlify.app/
