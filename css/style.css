@@ -35,7 +35,7 @@
     display: flex;
     padding: 15px;
 }
-.support a:hover, .login a:hover{
+.support a:hover, .login a:hover, .header:hover, .header i:hover{
     color: #E60012 !important;
 }
 .div-centro{
@@ -159,18 +159,57 @@ footer a:hover{
         display: none;
     }
     .hamburguer{
-        display: block;
+        display: flex;
         padding: 15px;
+        align-items: center;
     }
-    .hamburguer i{
-        font-size: 35px;
+    .hamburguer a{
+        display: flex;
     }
-    .div-centro{
-        flex-flow: column;
-        justify-content: space-around;    
+    .hamburguer-logo{
+        font-size: 30px;
+        margin-left: 15px;
+    }
+    .div-centro h1{
+        font-size: 28px;
     }
     .card-container{
-        height: 1120px;
         justify-content: center;
+        height: 300px;
+        justify-content: space-between;
+    }
+    .card-container img{
+        max-width: 170px;
+    }
+    .card p{
+        width: 70%;
+    }
+    .none{
+        display: none;
+    }
+}
+@media screen and (max-width: 425px){
+    .div-centro h1{
+        font-size: 23px;
+    }
+    .btnComprar{
+        width: 150px;
+    }
+    .card-container img{
+        max-width: 150px;
+    }
+}
+@media screen and (max-width: 320px){
+    .div-centro h1{
+        font-size: 18px;
+    }
+    .btnComprar{
+        width: 140px;
+    }
+    .btnComprar p{
+        font-size: 13px;
+    }
+    .card-container img{
+        max-width: 130px;
     }
 }
