@@ -18,6 +18,9 @@
 .header-info a, .header-info i{
     color: #484848;
 }
+.hamburguer{
+    display: none;
+}
 .support a{
     display: flex;
     padding: 15px;
@@ -139,18 +142,28 @@ footer a:hover{
     text-decoration: underline;
 }
 
-/* responsividade mobile  */
+/*Responsividade/Mobile*/
 @media screen and (max-width: 768px){
     .card-container{
         height: 620px;
     }
-    footer p{
+    footer p, .first-line-footer{
         text-align: center;
     }
 }
 @media screen and (max-width: 425px){
     .header{
-        height: 54px;
+        height: 56px;
+    }
+    .support, .login{
+        display: none;
+    }
+    .hamburguer{
+        display: block;
+        padding: 15px;
+    }
+    .hamburguer i{
+        font-size: 35px;
     }
     .div-centro{
         flex-flow: column;
