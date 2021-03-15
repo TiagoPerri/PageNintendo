@@ -6,6 +6,9 @@
 .header .logo{
     height: 55px;
 }
+.imgbanner{
+    width: 100% !important;
+}
 .header-info{
     display: flex;
     align-items: center;
@@ -83,9 +86,10 @@
 }
 .card-container{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
+    overflow: scroll;
     justify-content: space-between;
-    width: 85%;
+    width: 100%;
     margin: auto;
     height: 320px;
     padding-top: 40px;
@@ -93,6 +97,10 @@
 }
 .card{
     height: 200px;
+    margin-right: 20px;
+}
+.card:first-child{
+    margin-left: 20px;
 }
 .card img{
     max-width: 230px;
@@ -153,7 +161,11 @@ footer a:hover{
 }
 @media screen and (max-width: 425px){
     .header{
-        height: 56px;
+        height: 46px;
+    }
+    .logo img{
+        width: 75%;
+        height: 45px;
     }
     .support, .login{
         display: none;
@@ -167,7 +179,7 @@ footer a:hover{
         display: flex;
     }
     .hamburguer-logo{
-        font-size: 30px;
+        font-size: 22px;
         margin-left: 15px;
     }
     .div-centro h1{
@@ -184,19 +196,24 @@ footer a:hover{
     .card p{
         width: 90%;
     }
-    .none{
-        display: none;
-    }
 }
 @media screen and (max-width: 425px){
+    .div-centro h1{
+        font-size: 26px;
+    }
+    .btnComprar{
+        width: 180px;
+    }
+    .card-container img{
+        max-width: 150px;
+    }
+}
+@media screen and (max-width: 375px){
     .div-centro h1{
         font-size: 23px;
     }
     .btnComprar{
         width: 150px;
-    }
-    .card-container img{
-        max-width: 150px;
     }
 }
 @media screen and (max-width: 320px){
