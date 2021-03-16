@@ -24,6 +24,10 @@
 .hamburguer{
     display: none;
 }
+.hamburger-menu{
+    width: 23px;
+    margin-left: 13px;
+}
 .support a{
     display: flex;
     padding: 15px;
@@ -152,6 +156,17 @@ footer a:hover{
 
 /*Responsividade/Mobile*/
 @media screen and (max-width: 768px){
+    .support, .login{
+        display: none;
+    }
+    .hamburguer{
+        display: flex;
+        padding: 15px;
+        align-items: center;
+    }
+    .hamburguer a{
+        display: flex;
+    }
     .card-container{
         height: 620px;
     }
@@ -166,21 +181,6 @@ footer a:hover{
     .logo img{
         width: 75%;
         height: 45px;
-    }
-    .support, .login{
-        display: none;
-    }
-    .hamburguer{
-        display: flex;
-        padding: 15px;
-        align-items: center;
-    }
-    .hamburguer a{
-        display: flex;
-    }
-    .hamburguer-logo{
-        font-size: 22px;
-        margin-left: 15px;
     }
     .div-centro h1{
         font-size: 28px;
