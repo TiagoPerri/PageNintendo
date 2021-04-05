@@ -10,9 +10,13 @@
 		<meta name="viewport"content="width=device-width, initial-scale=1.0">
 
 		<!--Links-->
-        <link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/fonts.css">
+		<link rel="stylesheet" href="css/register-login.css">
+		
+
+		
 
 		<!--Icons-->
         <script src="https://kit.fontawesome.com/92b73e7f59.js" crossorigin="anonymous"></script>
@@ -32,8 +36,7 @@
 				<div class="login">
 					<a href="#">
 						<i class="fas fa-user"></i>
-						
-						<a href="./login.html">Fazer login</a>
+						<p>Fazer login/Criar conta</p>
 					</a>
 				</div>
 				<div class="hamburguer">
@@ -48,19 +51,34 @@
 			</div>
 		</div>
 		
-		<div> <!-- Banner principal -->
-			<a href="https://www.nintendo.com/pt_BR/switch/system/">
-				<img class="imgbanner" src="assets/principal.jpg" alt="imagem principal do site, com a presença do nintendo switch"/>
-			</a>
+		<div> <!-- Tela Cadastro -->
+			<div class="container" >			 
+				<div class="content">      
+				  <!--FORMULÁRIO DE CADASTRO-->
+				  <div id="login">
+					<form method="post" action=""> 
+					  <h1>Login</h1> 
+					  <p> 
+						<label for="nome_login">Seu nome</label>
+						<input id="nome_login" name="nome_login" required="required" type="text" placeholder="Leonardo"/>
+					  </p>
+					   
+					  <p> 
+						<label for="email_login">Seu e-mail</label>
+						<input id="email_login" name="email_login" required="required" type="password" placeholder="exemplo: mypassword" /> 
+					  </p>		   
+					  <p> 
+						<input type="submit" value="Logar" /> 
+					  </p>			   
+					  <p class="link">
+						Ainda não tem conta?
+						<a href="./register.html">Cadastre-se</a>
+					  </p>
+					</form>
+				  </div>
+				</div>
+			  </div> 
 		</div>
-	
-		<div class="div-centro"> <!-- compre já -->
-			<h1>Já disponivel</h1>
-			<a class="btnComprar" href="#">
-				<p>Comprar agora</p>
-				<i class="fas fa-angle-right"></i>
-			</a>			
-	   </div>
 	   <div class="card-container">
 			<div class="card">
 				<img src="./assets/jogo1.jpg" alt="jogo do Super Mario All Stars"/>

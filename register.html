@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/fonts.css">
+		<link rel="stylesheet" href="css/register-login.css">
+		
 
 		<!--Icons-->
         <script src="https://kit.fontawesome.com/92b73e7f59.js" crossorigin="anonymous"></script>
@@ -32,8 +34,7 @@
 				<div class="login">
 					<a href="#">
 						<i class="fas fa-user"></i>
-						
-						<a href="./login.html">Fazer login</a>
+						<p>Fazer login/Criar conta</p>
 					</a>
 				</div>
 				<div class="hamburguer">
@@ -48,19 +49,43 @@
 			</div>
 		</div>
 		
-		<div> <!-- Banner principal -->
-			<a href="https://www.nintendo.com/pt_BR/switch/system/">
-				<img class="imgbanner" src="assets/principal.jpg" alt="imagem principal do site, com a presença do nintendo switch"/>
-			</a>
-		</div>
+		<div> <!-- Tela Login -->
+			<div class="container" >
 	
-		<div class="div-centro"> <!-- compre já -->
-			<h1>Já disponivel</h1>
-			<a class="btnComprar" href="#">
-				<p>Comprar agora</p>
-				<i class="fas fa-angle-right"></i>
-			</a>			
-	   </div>
+				 
+				<div class="content">      
+				  <!--realização do cadastro -->
+				  <div id="cadastro">
+					<form method="post" action=""> 
+					  <h1>Cadastro</h1> 
+					   
+					  <p> 
+						<label for="nome_cad">Seu nome</label>
+						<input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome" />
+					  </p>
+					   
+					  <p> 
+						<label for="email_cad">Seu e-mail</label>
+						<input id="email_cad" name="email_cad" required="required" type="email" placeholder="nome@hotmail.com"/> 
+					  </p>
+					   
+					  <p> 
+						<label for="senha_cad">Sua senha</label>
+						<input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="sua senha"/>
+					  </p>
+					   
+					  <p> 
+						<input type="submit" value="Cadastrar"/> 
+					  </p>
+					  <p class="link">
+						Já tem conta? Faça login
+						<a href="./login.html">Fazer Login</a>
+					  </p>
+					</form>
+				  </div>
+				</div>
+			  </div> 
+		</div>
 	   <div class="card-container">
 			<div class="card">
 				<img src="./assets/jogo1.jpg" alt="jogo do Super Mario All Stars"/>

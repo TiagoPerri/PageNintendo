@@ -42,6 +42,10 @@
     display: flex;
     padding: 15px;
 }
+.login {
+    display: flex;
+    
+}
 .support a:hover, .login a:hover, .header:hover, .header i:hover{
     color: #E60012 !important;
 }
