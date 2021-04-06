@@ -10,10 +10,12 @@
 		<meta name="viewport"content="width=device-width, initial-scale=1.0">
 
 		<!--Links-->
-        <link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/fonts.css">
 		<link rel="stylesheet" href="css/register-login.css">
+		
+
 		
 
 		<!--Icons-->
@@ -49,43 +51,28 @@
 			</div>
 		</div>
 		
-		<div> <!-- Tela Login -->
-			<div class="container" >
-	
-				 
-				<div class="content">      
-				  <!--realização do cadastro -->
-				  <div id="cadastro">
-					<form method="post" action=""> 
-					  <h1>Cadastro</h1> 
-					   
-					  <p> 
-						<label for="nome_cad">Seu nome</label>
-						<input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome" />
-					  </p>
-					   
-					  <p> 
-						<label for="email_cad">Seu e-mail</label>
-						<input id="email_cad" name="email_cad" required="required" type="email" placeholder="nome@hotmail.com"/> 
-					  </p>
-					   
-					  <p> 
-						<label for="senha_cad">Sua senha</label>
-						<input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="sua senha"/>
-					  </p>
-					   
-					  <p> 
-						<input type="submit" value="Cadastrar"/> 
-					  </p>
-					  <p class="link">
-						Já tem conta? Faça login
-						<a href="./login.html">Fazer Login</a>
-					  </p>
-					</form>
-				  </div>
+		<div> <!-- Tela de Busca -->
+			<div class="container" >			 
+				<div class="content">   
+					<h1>API Section</h1>
+					<input type='text' name='busca' value=''/>
+					<button>procurar</button> 
+					<ul></ul> <!-- aqui vai ser adicionado os elementos da pesquisa -->
+					<script type='text/javascript' charset="utf-8">
+						var button = document.querySelector('button'); // recupera botao
+						var lista = document.querySelector('ul'); // recupera ul
+						button.addEventListener('click', function(){
+							var li = document.createElement(li); // cria um li para colocar no ul
+							var query = document.querySelector('input').value; // recupera texto do input
+							li.innerHTML = '<li>'+query+'</li>'; // aqui adiciona no LI a palavra que ta no input (query)
+							lista.appendChild(li);	// faz aparecer na tela
+							document.querySelector('input').value = ''; // limpar barra de pesquisa
+						})
+				   </script>
 				</div>
 			  </div> 
 		</div>
+		
 	   <div class="card-container">
 			<div class="card">
 				<img src="./assets/jogo1.jpg" alt="jogo do Super Mario All Stars"/>

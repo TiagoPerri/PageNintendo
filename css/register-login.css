@@ -44,7 +44,7 @@
     position: static;
   }
   
-  /* webkit */
+  /* webkit para navegadores antigos*/
   ::-webkit-input-placeholder  {
     color: #bebcbc; 
     font-style: italic;
