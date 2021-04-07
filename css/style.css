@@ -136,6 +136,23 @@
     width: 380px;
     margin-right: 4px;
 }
+
+.containerHero{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: center;
+    width: 150px;
+    margin: auto;
+    height: 100px;
+    border-bottom: 0.5px solid #DADADA;
+}
+
+.containerHero img {
+    position: right;
+    max-height: 60px;
+    max-width: 60px;
+}
 /*-----------------------*/
 
 /*Carrossel Jogos*/
