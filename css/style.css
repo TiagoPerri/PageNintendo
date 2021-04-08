@@ -142,6 +142,7 @@
     display: flex;
     flex-flow: row nowrap;
     overflow: scroll;
+    overflow-y: hidden;
     width: 85%;
     margin: auto;
     height: 450px;
@@ -291,8 +292,13 @@ footer a:hover{
         width: 75%;
         height: 45px;
     }
-    .div-centro h1{
-        font-size: 28px;
+    .divSearchAPI{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .btnAPI{
+        margin-top: 20px;
     }
     .card-container{
         justify-content: center;
@@ -305,9 +311,7 @@ footer a:hover{
     .card p{
         width: 90%;
     }
-}
-@media screen and (max-width: 425px){
-    .div-centro h1{
+    .div-centro h1, .h1API{
         font-size: 26px;
     }
     .btnComprar{
@@ -318,7 +322,10 @@ footer a:hover{
     }
 }
 @media screen and (max-width: 424px){
-    .div-centro h1{
+    .input-geral{
+        width: 270px;
+    }
+    .div-centro h1, .h1API{
         font-size: 23px;
     }
     .btnComprar{
