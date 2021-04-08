@@ -137,21 +137,58 @@
     margin-right: 4px;
 }
 
-.containerHero{
+/*API Resultados*/
+.resultadosAPI{
     display: flex;
-    align-items: center;
-    flex-flow: column;
-    justify-content: center;
-    width: 150px;
+    flex-flow: row nowrap;
+    overflow: scroll;
+    width: 85%;
     margin: auto;
-    height: 100px;
-    border-bottom: 0.5px solid #DADADA;
+    height: 450px;
+    border-bottom: 1px solid #DADADA;
 }
-
-.containerHero img {
-    position: right;
-    max-height: 60px;
-    max-width: 60px;
+.h1API{
+    font-size: 2.375rem;
+    color:#484848;
+    font-family: "Museo-Sans";
+    font-weight: bold;
+    margin: 20px 30px;
+}
+#div-hero{
+    display: flex;
+    justify-content: space-around;
+}
+.card-hero{
+    height: 200px;
+    margin-right: 30px;
+    width: 250px;
+}
+.card-hero:first-child{
+    margin-left: 20px;
+}
+.card-hero img{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #DADADA;
+    border-radius: 4px;
+}
+.card-hero h1{
+    font-size: 21px;
+    font-family: "Museo-Sans";
+    margin-top: 22px;
+}
+.card-hero h2{
+    font-family: "Museo-Regular";
+    font-size: 14px;
+    margin-top: 10px;
+    padding-bottom: 9px;
+}
+.card-hero p{
+    font-family: "Museo-Regular";
+    font-size: 14px;
+    margin-top: 10px;
+    padding-bottom: 9px;
+    border-bottom: 3px solid red;
 }
 /*-----------------------*/
 

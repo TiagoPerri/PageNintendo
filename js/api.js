@@ -1,4 +1,4 @@
-const lista = document.querySelector('ul'); 
+const lista = document.getElementById('div-hero');
 let personagens = {};
 let results = [];
 
@@ -18,17 +18,16 @@ const mostrarPersonagens = (characters) => {
     const htmlString = characters
         .map((character) => { // array 
             return `       
-            <li>
+            <div class="card-hero">
                     <h1>Nome: ${character.name}</h1></a>
                     <h2>Editora: ${character.biography.publisher}</h2></a>
-                    <img class="containerHero image" src="${character.image.url}"></img>
-                    <p>inteligência: ${character.powerstats.intelligence}</p>
-                    <p>força: ${character.powerstats.strength}</p>
-                    <p>poder: ${character.powerstats.power}</p>
-                    <p>durabilidade: ${character.powerstats.durability}</p> 
+                    <img src="${character.image.url}"></img>
+                    <p>Inteligência: ${character.powerstats.intelligence}</p>
+                    <p>Força: ${character.powerstats.strength}</p>
+                    <p>Poder: ${character.powerstats.power}</p>
+                    <p>Durabilidade: ${character.powerstats.durability}</p> 
                 
-           </li>
-      
+           </div>
         `
         })
         .join('');
