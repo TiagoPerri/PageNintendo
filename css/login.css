@@ -47,7 +47,7 @@ height: 350px;
   justify-content: center;
   margin: 30px 0;
 }
-.BtnGeral{
+#BtnSubmit{
   background-color:#e60012;
   width: 170px;
   height: 45px;
@@ -59,4 +59,10 @@ height: 350px;
   color: white; 
   font-size: 16px;
   font-family: "Museo-Sans";
+}
+
+@media screen and (max-width: 425px){
+  #login{
+    width: 100%;
+  }
 }
