@@ -4,13 +4,24 @@ let results = [];
 
 const getPersonagens = async () => { // função assíncrona
     let query = document.querySelector('input').value; // recupera texto do input
-    try {
-        const res = await fetch(`https://www.superheroapi.com/api.php/3708772112566731/search/${query}`); // capta os dados da API de acordo com a query
-        personagens = await res.json();
-        results = personagens.results;
-        mostrarPersonagens(results);
-    } catch (falha) {
-        console.error(falha);
+    // só pode quem fazer login
+    if(!localStorage.token){
+        console.log('voce não esta logado');
+        return false;
+    }
+    var tk = localStorage.getItem('token');
+    if (tk != 0) {
+        try {
+            const res = await fetch(`https://www.superheroapi.com/api.php/3708772112566731/search/${query}`); // capta os dados da API de acordo com a query
+            personagens = await res.json();
+            results = personagens.results;
+            mostrarPersonagens(results);
+        } catch (falha) {
+            console.error(falha);
+        }
+    }
+    else{
+        console.log('voce precisa estar logado para fazer isso');
     }
 };
 
