@@ -17,32 +17,26 @@ function doLogin(){
 
    if(myDB.email.indexOf(email) != -1 && email != '')    // Encontrou o elemento email no banco de dados, espécie de isInArray(array,email)
    {  
-        console.log('login fetuado');
-        token = myDB.id; // ID do usuário logado
-
-        if(localStorage.email_login){
-            document.getElementById('email_login').value = localStorage.email_login;
-        }
-        
-        if(localStorage.password_login){
-            document.getElementById('password_login').value = localStorage.password_login;
-        }
+        alert("login efetuado com sucesso");
+        token = myDB.id; // ID do usuário retornado pelo reqres, para cada usuário ter seu TOKEN único
 
         if(localStorage.token){
             token = myDB.id;
         }
 
-        var email_login = document.getElementById('email_login').value;
-        var password_login = document.getElementById('password_login').value;
-        localStorage.setItem('email_login', email_login);
-        localStorage.setItem('senha_login', password_login);
+  //      var email_login = document.getElementById('email_login').value;
+  //     var password_login = document.getElementById('password_login').value;
+  //      localStorage.setItem('email_login', email_login);
+  //      localStorage.setItem('senha_login', password_login);
         localStorage.setItem('token', token);
+        window.location.href = "./api.html";
     
         
         //document.onchange = salvarLogin;
     }
     else{
         console.log('login falhou');
+        alert("login invalido");
         console.log('email do banco de dados e email digitado pelo usuário são diferentes');
         console.log('email digitado:');
         console.log(email);
