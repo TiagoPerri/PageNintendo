@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/login.css">
 		<link rel="stylesheet" href="css/fonts.css">
-		<link rel="stylesheet" href="css/register-login.css">
+		<!--NÃO EXISTE TIAGO <link rel="stylesheet" href="css/register-login.css">  -->
 		
 
 		<!--Icons-->
@@ -53,25 +53,21 @@
 			<div class="contLogin">			 
 				<div>      
 				  <div id="cadastro">
-					<form method="post" action=""> 
+					
 						<h1>Cadastro</h1> 
 						<div class="div-input"> 
-							<label for="email_cadastro" class="label-geral">Nome</label>
-							<input id="email_cadastro" name="nome_cadastro" required placeholder="Digite seu nome" class="input-geral"/> 
-						</div>	
-						<div class="div-input"> 
 							<label for="email_cadastro" class="label-geral">E-mail</label>
-							<input id="email_cadastro" name="email_cadastro" required placeholder="Digite seu e-mail" class="input-geral"/> 
+							<input id="email_login" name="email_cadastro" required placeholder="Digite seu e-mail" class="input-geral"/> 
 						</div>	
 						<div class="div-input"> 
 							<label for="password_cadastro" class="label-geral">Sua senha</label>
-							<input id="password_cadastro" name="password_cadastro" required type="password" placeholder="*****" class="input-geral"/> 
+							<input id="password_login" name="password_cadastro" required type="password" placeholder="*****" class="input-geral"/> 
 						</div>		   
 						
 						<div class="div-btn">
-							<input type="submit" href="./API.html" id="BtnSubmit"></input>
+							<button id="BtnSubmit_cadastro">REGISTRAR</button>
 						</div>
-					</form>
+					
 				  </div>
 				</div>
 			  </div> 
@@ -95,6 +91,6 @@
 			   <p>Para assistência em português para residentes da América Latina, <a href="">clique aqui.</a></p>
 		   </div>
 	   </footer>
-
+	   <script src="js/reqRes.js"></script>
 	</body>
 </html>

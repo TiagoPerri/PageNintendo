@@ -4,16 +4,29 @@ let results = [];
 
 const getPersonagens = async () => { // função assíncrona
     let query = document.querySelector('input').value; // recupera texto do input
-    try {
-        const res = await fetch(`https://www.superheroapi.com/api.php/3708772112566731/search/${query}`); // capta os dados da API de acordo com a query
-        personagens = await res.json();
-        results = personagens.results;
-        mostrarPersonagens(results);
-    } catch (falha) {
-        console.error(falha);
-    }
-};
 
+    if(!localStorage.token){ // nao existe token na sessão
+        console.log('voce não esta logado');
+        var img = document.createElement("img");
+        img.src="assets/api_fail.png";
+        img.alt="error login";
+        img.width=170;
+        img.height=90;
+        document.getElementById('div-hero').appendChild(img);
+        
+        return false;
+    }
+        try {
+            const res = await fetch(`https://www.superheroapi.com/api.php/3708772112566731/search/${query}`); // capta os dados da API de acordo com a query
+            personagens = await res.json();
+            results = personagens.results;
+            mostrarPersonagens(results);
+        } catch (falha) {
+            console.error(falha);
+        }
+        };
+    
+    
 const mostrarPersonagens = (characters) => {
     const htmlString = characters
         .map((character) => { // array 
@@ -33,5 +46,8 @@ const mostrarPersonagens = (characters) => {
         .join('');
     lista.innerHTML = htmlString; // adiciona o conteudo
 };
+
+
+
 var button = document.querySelector('button'); // recupera botao
 button.addEventListener("click", getPersonagens); // faz carregar a pesquisa ao clicar, chamando a função
