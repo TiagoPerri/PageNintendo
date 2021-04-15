@@ -12,6 +12,7 @@
 		<!--Links-->
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/login.css">
 		<link rel="stylesheet" href="css/fonts.css">
 		<link rel="stylesheet" href="css/register-login.css">
 		
@@ -48,86 +49,33 @@
 				</div>
 			</div>
 		</div>
-		
-		<div> <!-- Tela Login -->
-			<div class="container" >
-	
-				 
-				<div class="content">      
-				  <!--realização do cadastro -->
+		<div> <!-- Tela Cadastro -->
+			<div class="contLogin">			 
+				<div>      
 				  <div id="cadastro">
 					<form method="post" action=""> 
-					  <h1>Cadastro</h1> 
-					   
-					  <p> 
-						<label for="nome_cad">Seu nome</label>
-						<input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome" />
-					  </p>
-					   
-					  <p> 
-						<label for="email_cad">Seu e-mail</label>
-						<input id="email_cad" name="email_cad" required="required" type="email" placeholder="nome@hotmail.com"/> 
-					  </p>
-					   
-					  <p> 
-						<label for="senha_cad">Sua senha</label>
-						<input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="sua senha"/>
-					  </p>
-					   
-					  <p> 
-						<input type="submit" value="Cadastrar"/> 
-					  </p>
-					  <p class="link">
-						Já tem conta? Faça login
-						<a href="./login.html">Fazer Login</a>
-					  </p>
+						<h1>Cadastro</h1> 
+						<div class="div-input"> 
+							<label for="email_cadastro" class="label-geral">Nome</label>
+							<input id="email_cadastro" name="nome_cadastro" required placeholder="Digite seu nome" class="input-geral"/> 
+						</div>	
+						<div class="div-input"> 
+							<label for="email_cadastro" class="label-geral">E-mail</label>
+							<input id="email_cadastro" name="email_cadastro" required placeholder="Digite seu e-mail" class="input-geral"/> 
+						</div>	
+						<div class="div-input"> 
+							<label for="password_cadastro" class="label-geral">Sua senha</label>
+							<input id="password_cadastro" name="password_cadastro" required type="password" placeholder="*****" class="input-geral"/> 
+						</div>		   
+						
+						<div class="div-btn">
+							<input type="submit" href="./API.html" id="BtnSubmit"></input>
+						</div>
 					</form>
 				  </div>
 				</div>
 			  </div> 
 		</div>
-	   <div class="card-container">
-			<div class="card">
-				<img src="./assets/jogo1.jpg" alt="jogo do Super Mario All Stars"/>
-				<h1>Já disponível</h1>
-				<p>Nintendo Switch</p>
-			</div>
-			<div class="card">
-				<img src="./assets/jogo2.jpg" alt="jogo Pokemon Sword"/>
-				<h1>Já disponível</h1>
-				<p>Nintendo Switch</p>
-			</div>
-			<div class="card">
-				<img src="./assets/jogo3.jpg" alt="jogo Pokemon Shield"/>
-				<h1>Já disponível</h1>
-				<p>Nintendo Switch</p>
-			</div>
-			<div class="card">
-				<img src="./assets/jogo4.jpg" alt="jogo Super Smash Bros"/>
-				<h1>Já disponível</h1>
-				<p>Nintendo Switch</p>
-			</div>
-			<div class="card">
-				<img src="./assets/jogo1.jpg" alt="jogo do Super Mario All Stars"/>
-				<h1>Já disponível</h1>
-				<p>Nintendo Switch</p>
-			</div>
-			<div class="card">
-				<img src="./assets/jogo4.jpg" alt="jogo Super Smash Bros"/>
-				<h1>Já disponível</h1>
-				<p>Nintendo Switch</p>
-			</div>
-			<div class="card">
-				<img src="./assets/jogo2.jpg" alt="jogo Pokemon Sword"/>
-				<h1>Já disponível</h1>
-				<p>Nintendo Switch</p>
-			</div>
-			<div class="card">
-				<img src="./assets/jogo3.jpg" alt="jogo Pokemon Shield"/>
-				<h1>Já disponível</h1>
-				<p>Nintendo Switch</p>
-			</div>
-	   </div>
 
 	   <footer>
 		   <div class="first-line-footer">

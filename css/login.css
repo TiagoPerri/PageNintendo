@@ -9,7 +9,24 @@ border: 1px solid rgba(147, 184, 189,0.8);
 border-radius: 4px;
 height: 350px;
 }
+#cadastro{
+  width: 45%; 
+  margin: auto;
+  background: rgb(247, 247, 247);
+  border: 1px solid rgba(147, 184, 189,0.8);
+  border-radius: 4px;
+  height: 440px;
+}
 #login form h1{
+  font-size: 2.375rem;
+  color:#484848;
+  font-family: "Museo-Sans";
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+#cadastro form h1{
   font-size: 2.375rem;
   color:#484848;
   font-family: "Museo-Sans";
