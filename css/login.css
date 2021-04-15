@@ -82,4 +82,10 @@ height: 350px;
   #login{
     width: 100%;
   }
+  .div-input{
+    width: 90%;
+  }
+  .label-geral{
+    margin-left: 0px;
+  }
 }

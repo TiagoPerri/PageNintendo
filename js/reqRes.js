@@ -1,51 +1,115 @@
-// FORMA O "BANCO DE DADOS" PARA O LOGIN
-let myDB = {}; // aqui fica armazenado os dados dos usuarios cadastrados do ReqRes
+document.addEventListener('DOMContentLoaded', function(){
+	acessoInvalido();
 
-fetch('https://reqres.in/api/users/2')
-    .then(response => response.json())
-    .then(json => {
-        console.log('DB information:')
-        myDB = json.data; // transfere os dados para o array
-        console.log(myDB);
-    })
-    
+	var entrarLogin = document.getElementById("login");
+	var btnSubmit = document.getElementsById("BtnSubmit");
+	var entrarCadastro = document.getElementById("cadastro");
 
-// VERIFICA A EFETIVAÇÃO DO LOGIN
-function doLogin(){
-    var token = 0; // false
-    var email = document.getElementById('email_login').value; // pega o email digitado pelo usuario
+	entrarCadastro.addEventListener("submit", function (event){
+		event.preventDefault();
+		requisicaoLogar();
+	});
 
-   if(myDB.email.indexOf(email) != -1 && email != '')    // Encontrou o elemento email no banco de dados, espécie de isInArray(array,email)
-   {  
-        alert("login efetuado com sucesso");
-        token = myDB.id; // ID do usuário retornado pelo reqres, para cada usuário ter seu TOKEN único
+	entrarLogin.addEventListener("submit", function (event){
+		event.preventDefault();
+		requisicaoLogin();
+	});
+});
 
-        if(localStorage.token){
-            token = myDB.id;
-        }
+function requisicaoLogin(){
+	var campoUser = document.getElementById("email_login");
+	var campoSenha = document.getElementById("password_login");
+	var errorMessage = document.querySelector("");
 
-  //      var email_login = document.getElementById('email_login').value;
-  //     var password_login = document.getElementById('password_login').value;
-  //      localStorage.setItem('email_login', email_login);
-  //      localStorage.setItem('senha_login', password_login);
-        localStorage.setItem('token', token);
-        window.location.href = "./api.html";
-    
-        
-        //document.onchange = salvarLogin;
-    }
-    else{
-        console.log('login falhou');
-        alert("login invalido");
-        console.log('email do banco de dados e email digitado pelo usuário são diferentes');
-        console.log('email digitado:');
-        console.log(email);
-        console.log('email que temos cadastrado:');
-        console.log(myDB.email);
-        return false;
-    }
-    return true;
+	if(campoUser.value != null && campoSenha.value != null){
+		requisicaoLogin(campoUser.value, campoSenha.value, function (response){
+			if(response.error){
+				errorMessage.classList.add("");
+				errorMessage.innerHTML = response.error;
+				funcError();
+			}else{
+				localStorage.setItem("loginToken", response.token);
+				irPageAPI();
+			}
+		});
+	}
 }
 
-var button = document.getElementById('BtnSubmit'); // recupera botao
-button.addEventListener("click", doLogin); // faz carregar a pesquisa ao clicar, chamando a função
+function requisicaoLogar(){
+	var campoUser = document.getElementById("email_login");
+	var campoSenha = document.getElementById("password_login");
+	var registerBoxError = document.querySelector("");
+
+	if(campoUser.value != null && campoSenha.value != null){
+		requisicaoCadastro(campoUser.value, campoSenha.value, function (response){
+			if(response.error){
+				registerBoxError.classList.add("");
+				registerBoxError.innerHTML = response.error;
+				funcError();
+			}else{
+				localStorage.setItem("loginToken",response.token);
+				irPageAPI();
+			}
+		});
+	}
+}
+
+function requisicaoLogin(email, password, callback){
+	var requisicao = new XMLHttpRequest();
+
+	requisicao.open("POST", "https://reqres.in/api/login", true);
+	requisicao.setRequestHeader("Content-Type", "application/json; charset=utf-8")
+	requisicao.onreadystatechange = function () {
+
+		if(requisicao.readyState !== 4){
+			return;
+		}
+		callback(JSON.parse(requisicao.responseText));
+	};
+	requisicao.send(JSON.stringify({
+		email: email,
+		password: password
+	}));
+}
+
+function requisicaoCadastro(email, password, callback){
+    var requisicao = new XMLHttpRequest();
+
+    requisicao.open("POST", "https://reqres.in/api/register", true);
+    requisicao.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+
+    requisicao.onreadystatechange = function () {
+        if(requisicao.readyState !== 4){
+            return;
+        }
+        callback(JSON.parse(requisicao.responseText));
+    };
+    requisicao.send(JSON.stringify({
+        email: email,
+        password: password
+    }));
+}
+
+function irPageAPI(){
+	window.location.href = "api.html"
+}
+
+function acessoInvalido(){
+	var data = new URLSearchParams(window.location.search);
+	var acessoInvalido = data.get("acessoInvalido");
+	var errorMessage = document.querySelector("");
+
+	if(acessoInvalido != null){
+		errorMessage.classList.add("");
+		errorMessage.innerHTML = "Login não realizado";
+		ativarModal();
+	}
+}
+
+function logar(){
+	let token = localStorage.getItem("loginToken");
+
+	if(token != null){
+		return true;
+	}
+}
