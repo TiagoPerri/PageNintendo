@@ -90,6 +90,19 @@ height: 350px;
   font-size: 16px;
   font-family: "Museo-Sans";
 }
+#BtnLogout{
+  background-color:#e60012;
+  width: 120px;
+  height: 25px;
+  border-radius: 4px;
+  margin-left: 5px;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  color: white; 
+  font-size: 12px;
+  font-family: "Museo-Sans";
+}
 
 @media screen and (max-width: 425px){
   #login{
