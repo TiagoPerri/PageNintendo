@@ -17,7 +17,7 @@ height: 350px;
   border-radius: 4px;
   height: 440px;
 }
-#login form h1{
+#login h1{
   font-size: 2.375rem;
   color:#484848;
   font-family: "Museo-Sans";
@@ -26,7 +26,7 @@ height: 350px;
   text-align: center;
   margin-top: 30px;
 }
-#cadastro form h1{
+#cadastro h1{
   font-size: 2.375rem;
   color:#484848;
   font-family: "Museo-Sans";

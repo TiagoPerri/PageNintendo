@@ -1,6 +1,7 @@
 var entrarLogin = document.getElementById("BtnSubmit"); 
 var entrarCadastro = document.getElementById("BtnSubmit_cadastro");
 let serverTalk = ""; // mensagens de erro do servidor vão ser armazenados aqui
+
 if (entrarLogin != null){ // está no modo de Login
 	entrarLogin.addEventListener("click", function (event){
 		requisicaoLogin();
@@ -13,6 +14,16 @@ if (entrarCadastro != null){ // está no modo de Registro
 	});
 }
 
+function chamaModal(modalID){
+    const modal = document.getElementById(modalID);
+    modal.classList.add('mostrar');
+
+    modal.addEventListener('click', (e) => {
+        if(e.target.id == modalID || e.target.className == 'fecharModal'){
+            modal.classList.remove('mostrar');
+        }
+    });
+}
 
 // function requisicaoLogin(){
 	// var campoUser = document.getElementById("email_login");
@@ -34,7 +45,11 @@ function requisicaoLogin(){
 		doLogin(campoUser.value, campoSenha.value, function (response){
 				localStorage.setItem("token", response.token); 
 				if (localStorage.getItem("token") == "undefined"){ // editado aqui
+<<<<<<< HEAD
 					alert("somente usuarios do reqres são aceitos, tente esse email: eve.holt@reqres.in");
+=======
+					chamaModal('Modal1');
+>>>>>>> 305746f7368fe1a42df69ef7658ff365681addf6
 					localStorage.removeItem("token");
 					return false;
 				}	
@@ -51,7 +66,11 @@ function requisicaoCadastro(){
 		doRegister(campoUser.value, campoSenha.value, function (response){
 			localStorage.setItem("token", response.token);
 			if (localStorage.getItem("token") == "undefined"){ // somente usuarios do reqres são aceitos
+<<<<<<< HEAD
 					alert("somente usuarios do reqres são aceitos, tente esse email: eve.holt@reqres.in");
+=======
+                    chamaModal('Modal1');
+>>>>>>> 305746f7368fe1a42df69ef7658ff365681addf6
 					localStorage.removeItem("token");
 					return false;
 			}	
@@ -118,30 +137,26 @@ function fazerValidacao(email,password,type){
 
     serverTalk = ""; // limpa
     if (userLogado() == true){
-        serverTalk = serverTalk + "voce já está logado";
-        alert(serverTalk);
+        chamaModal('Modal6');
         return false;       
     }
     if(email.value == null || email.value == "") {
-        serverTalk = serverTalk + "email não pode ficar vazio";
-        alert(serverTalk);
+        chamaModal('Modal5');
         return false;
     }
     if(password.value == null || password.value == "") {
-        serverTalk = serverTalk + "senha não pode ficar vazio";
-        alert(serverTalk);
+        chamaModal('Modal2');
         return false;
     }
     if(email.value.length <= 3) {
-        serverTalk = serverTalk + "email muito curto";
-        alert(serverTalk);
+        chamaModal('Modal3');
         return false;
     }
     if(password.value.length <= 3) {
-        serverTalk = serverTalk + "senha muito curta";
-        alert(serverTalk);
+        chamaModal('Modal4');
         return false;
     }
+<<<<<<< HEAD
     // if (type == "onLogin") { // tipo de validação = Login
         // if(email.value != apiOnLoginEmail){
             // serverTalk = serverTalk + "email não cadastrado (não existe no reqres.in) ";
@@ -170,5 +185,7 @@ function fazerValidacao(email,password,type){
             // return false;
         // }
     // }   
+=======
+>>>>>>> 305746f7368fe1a42df69ef7658ff365681addf6
     return true;
 }
