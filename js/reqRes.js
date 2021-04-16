@@ -138,3 +138,13 @@ function fazerValidacao(email,password,type){
         return false;
     }
     return true;
+}
+
+// deslogar usuário
+var botaoLogout = document.getElementById("BtnLogout"); 
+	botaoLogout.addEventListener("click", deslogar);
+	
+function deslogar(){
+	localStorage.removeItem("token");
+	window.location.href = "index.html"
+}
