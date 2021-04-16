@@ -117,13 +117,11 @@ function fazerValidacao(email,password,type){
 
     serverTalk = ""; // limpa
     if (userLogado() == true){
-        serverTalk = serverTalk + "voce já está logado";
-        alert(serverTalk);
+        chamaModal('Modal6');
         return false;       
     }
     if(email.value == null || email.value == "") {
-        serverTalk = serverTalk + "email não pode ficar vazio";
-        alert(serverTalk);
+        chamaModal('Modal5');
         return false;
     }
     if(password.value == null || password.value == "") {
