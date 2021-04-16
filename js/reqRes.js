@@ -25,17 +25,6 @@ function chamaModal(modalID){
     });
 }
 
-// function requisicaoLogin(){
-	// var campoUser = document.getElementById("email_login");
-	// var campoSenha = document.getElementById("password_login");
-
-	// if(fazerValidacao(campoUser,campoSenha,"onLogin") == true){
-		// doLogin(campoUser.value, campoSenha.value, function (response){
-				// localStorage.setItem("token", response.token);
-				// irPageAPI();
-		// });
-	// }
-// }
 
 function requisicaoLogin(){
 	var campoUser = document.getElementById("email_login");
@@ -45,11 +34,7 @@ function requisicaoLogin(){
 		doLogin(campoUser.value, campoSenha.value, function (response){
 				localStorage.setItem("token", response.token); 
 				if (localStorage.getItem("token") == "undefined"){ // editado aqui
-<<<<<<< HEAD
-					alert("somente usuarios do reqres são aceitos, tente esse email: eve.holt@reqres.in");
-=======
 					chamaModal('Modal1');
->>>>>>> 305746f7368fe1a42df69ef7658ff365681addf6
 					localStorage.removeItem("token");
 					return false;
 				}	
@@ -66,11 +51,7 @@ function requisicaoCadastro(){
 		doRegister(campoUser.value, campoSenha.value, function (response){
 			localStorage.setItem("token", response.token);
 			if (localStorage.getItem("token") == "undefined"){ // somente usuarios do reqres são aceitos
-<<<<<<< HEAD
-					alert("somente usuarios do reqres são aceitos, tente esse email: eve.holt@reqres.in");
-=======
                     chamaModal('Modal1');
->>>>>>> 305746f7368fe1a42df69ef7658ff365681addf6
 					localStorage.removeItem("token");
 					return false;
 			}	
@@ -156,36 +137,4 @@ function fazerValidacao(email,password,type){
         chamaModal('Modal4');
         return false;
     }
-<<<<<<< HEAD
-    // if (type == "onLogin") { // tipo de validação = Login
-        // if(email.value != apiOnLoginEmail){
-            // serverTalk = serverTalk + "email não cadastrado (não existe no reqres.in) ";
-            // serverTalk = serverTalk + "use: "+apiOnLoginEmail+" ";
-            // alert(serverTalk);
-            // return false;
-        // }
-        // if(password.value != apiOnLoginPassword){
-            // serverTalk = serverTalk + "senha invalida (não existe no reqres.in) ";
-            // serverTalk = serverTalk + "use: "+apiOnLoginPassword+" ";
-            // alert(serverTalk);
-            // return false;
-        // }
-    // }   
-    // if (type == "onRegister") { // tipo de validação = Register
-        // if(email.value != apiOnRegisterEmail){
-            // serverTalk = serverTalk + "voce não pode cadastrar esse email (não existe no reqres.in) ";
-            // serverTalk = serverTalk + "use: "+apiOnRegisterEmail+" ";
-            // alert(serverTalk);
-            // return false;
-        // }
-        // if(password.value != apiOnRegisterPassword){
-            // serverTalk = serverTalk + "voce não pode cadastrar essa senha (não existe no reqres.in) ";
-            // serverTalk = serverTalk + "use: "+apiOnRegisterPassword+" ";
-            // alert(serverTalk);
-            // return false;
-        // }
-    // }   
-=======
->>>>>>> 305746f7368fe1a42df69ef7658ff365681addf6
     return true;
-}
