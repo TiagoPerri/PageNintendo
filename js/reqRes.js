@@ -1,6 +1,7 @@
 var entrarLogin = document.getElementById("BtnSubmit"); 
 var entrarCadastro = document.getElementById("BtnSubmit_cadastro");
 let serverTalk = ""; // mensagens de erro do servidor vão ser armazenados aqui
+
 if (entrarLogin != null){ // está no modo de Login
 	entrarLogin.addEventListener("click", function (event){
 		requisicaoLogin();
@@ -13,18 +14,16 @@ if (entrarCadastro != null){ // está no modo de Registro
 	});
 }
 
+function chamaModal(modalID){
+    const modal = document.getElementById(modalID);
+    modal.classList.add('mostrar');
 
-// function requisicaoLogin(){
-	// var campoUser = document.getElementById("email_login");
-	// var campoSenha = document.getElementById("password_login");
-
-	// if(fazerValidacao(campoUser,campoSenha,"onLogin") == true){
-		// doLogin(campoUser.value, campoSenha.value, function (response){
-				// localStorage.setItem("token", response.token);
-				// irPageAPI();
-		// });
-	// }
-// }
+    modal.addEventListener('click', (e) => {
+        if(e.target.id == modalID || e.target.className == 'fecharModal'){
+            modal.classList.remove('mostrar');
+        }
+    });
+}
 
 function requisicaoLogin(){
 	var campoUser = document.getElementById("email_login");
@@ -34,7 +33,7 @@ function requisicaoLogin(){
 		doLogin(campoUser.value, campoSenha.value, function (response){
 				localStorage.setItem("token", response.token); 
 				if (localStorage.getItem("token") == "undefined"){ // editado aqui
-					alert("somente usuarios do reqres são aceitos, tente esse email: eve.holt@reqres.in");
+					chamaModal('Modal1');
 					localStorage.removeItem("token");
 					return false;
 				}	
@@ -51,7 +50,7 @@ function requisicaoCadastro(){
 		doRegister(campoUser.value, campoSenha.value, function (response){
 			localStorage.setItem("token", response.token);
 			if (localStorage.getItem("token") == "undefined"){ // somente usuarios do reqres são aceitos
-					alert("somente usuarios do reqres são aceitos, tente esse email: eve.holt@reqres.in");
+                    chamaModal('Modal1');
 					localStorage.removeItem("token");
 					return false;
 			}	
@@ -128,47 +127,16 @@ function fazerValidacao(email,password,type){
         return false;
     }
     if(password.value == null || password.value == "") {
-        serverTalk = serverTalk + "senha não pode ficar vazio";
-        alert(serverTalk);
+        chamaModal('Modal2');
         return false;
     }
     if(email.value.length <= 3) {
-        serverTalk = serverTalk + "email muito curto";
-        alert(serverTalk);
+        chamaModal('Modal3');
         return false;
     }
     if(password.value.length <= 3) {
-        serverTalk = serverTalk + "senha muito curta";
-        alert(serverTalk);
+        chamaModal('Modal4');
         return false;
     }
-    // if (type == "onLogin") { // tipo de validação = Login
-        // if(email.value != apiOnLoginEmail){
-            // serverTalk = serverTalk + "email não cadastrado (não existe no reqres.in) ";
-            // serverTalk = serverTalk + "use: "+apiOnLoginEmail+" ";
-            // alert(serverTalk);
-            // return false;
-        // }
-        // if(password.value != apiOnLoginPassword){
-            // serverTalk = serverTalk + "senha invalida (não existe no reqres.in) ";
-            // serverTalk = serverTalk + "use: "+apiOnLoginPassword+" ";
-            // alert(serverTalk);
-            // return false;
-        // }
-    // }   
-    // if (type == "onRegister") { // tipo de validação = Register
-        // if(email.value != apiOnRegisterEmail){
-            // serverTalk = serverTalk + "voce não pode cadastrar esse email (não existe no reqres.in) ";
-            // serverTalk = serverTalk + "use: "+apiOnRegisterEmail+" ";
-            // alert(serverTalk);
-            // return false;
-        // }
-        // if(password.value != apiOnRegisterPassword){
-            // serverTalk = serverTalk + "voce não pode cadastrar essa senha (não existe no reqres.in) ";
-            // serverTalk = serverTalk + "use: "+apiOnRegisterPassword+" ";
-            // alert(serverTalk);
-            // return false;
-        // }
-    // }   
     return true;
 }
