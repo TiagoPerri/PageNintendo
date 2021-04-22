@@ -30,15 +30,14 @@ function requisicaoLogin(){
 	var campoUser = document.getElementById("email_login");
 	var campoSenha = document.getElementById("password_login");
 
-	if(fazerValidacao(campoUser,campoSenha,"onLogin") == true){
-		doLogin(campoUser.value, campoSenha.value, function (response){
-				localStorage.setItem("token", response.token); 
-				if (localStorage.getItem("token") == "undefined"){ // editado aqui
-					chamaModal('Modal1');
-					localStorage.removeItem("token");
-					return false;
-				}	
-				irPageAPI();
+	if(fazerValidacao(campoUser,campoSenha,"onLogin") == true){ // faz a validação do campo
+		doLogin(campoUser.value, campoSenha.value, function (response){ 
+                if(response.status === 400 || response.error == "user not found"){ // usuário inválido do reqRes, logo não permite fazer login e gerar token (error 400)
+                    chamaModal('Modal1'); // erro de validação (email inválido)
+                    return false;
+                }
+				localStorage.setItem("token", response.token); // o usuário existe no reqRes, logo faz login
+				irPageAPI();         
 		});
 	}
 }
@@ -49,13 +48,12 @@ function requisicaoCadastro(){
 
 	if(fazerValidacao(campoUser,campoSenha,"onRegister") == true){
 		doRegister(campoUser.value, campoSenha.value, function (response){
-			localStorage.setItem("token", response.token);
-			if (localStorage.getItem("token") == "undefined"){ // somente usuarios do reqres são aceitos
-                    chamaModal('Modal1');
-					localStorage.removeItem("token");
-					return false;
-			}	
-			irPageAPI();
+            if(response.status === 400 || response.error == "Note: Only defined users succeed registration"){ // usuário inválido do reqRes, logo não permite registrar e gerar token (error 400)
+                chamaModal('Modal1'); // erro de validação (email inválido)
+                return false;
+            }
+            localStorage.setItem("token", response.token); // o usuário existe no reqRes, logo faz registro
+            irPageAPI();   
 		});
 	}
 }
