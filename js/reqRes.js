@@ -25,7 +25,6 @@ function chamaModal(modalID){
     });
 }
 
-
 function requisicaoLogin(){
 	var campoUser = document.getElementById("email_login");
 	var campoSenha = document.getElementById("password_login");
@@ -93,8 +92,9 @@ function doRegister(email, password, callback){
     }));
 }
 
-function irPageAPI(){
-	window.location.href = "api.html"
+function irPageAPI(contAPI){
+	var contAPI = document.getElementById("contAPI");
+    contAPI.classList.add('show');
 }
 
 function userLogado(){
