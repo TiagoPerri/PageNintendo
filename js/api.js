@@ -3,12 +3,15 @@ let personagens = {};
 let results = [];
 
 const getPersonagens = async () => { // função assíncrona
-    let query = document.querySelector('input').value; // recupera texto do input
+    //let query = document.querySelector('input').value; // recupera texto do input
+    let query = document.getElementById('queryAPI').value // recupera texto do input
+    console.log(query); 
 
     if(!localStorage.token){ // nao existe token na sessão
         console.log('voce não esta logado');
         var img = document.createElement("img");
-        img.src="assets/api_fail.png";
+        //img.src="assets/api_fail.png";
+        img.src="assets/login_fail.png";
         img.alt="error login";
         img.width=170;
         img.height=90;
@@ -21,8 +24,10 @@ const getPersonagens = async () => { // função assíncrona
             personagens = await res.json();
             results = personagens.results;
             mostrarPersonagens(results);
+            
         } catch (falha) {
             console.error(falha);
+            
         }
         };
     
@@ -49,5 +54,6 @@ const mostrarPersonagens = (characters) => {
 
 
 
-var button = document.querySelector('button'); // recupera botao
-button.addEventListener("click", getPersonagens); // faz carregar a pesquisa ao clicar, chamando a função
+//var button = document.querySelector('button'); // recupera botao
+var abutton = document.getElementById("btnAPI");
+abutton.addEventListener("click", getPersonagens); // faz carregar a pesquisa ao clicar, chamando a função

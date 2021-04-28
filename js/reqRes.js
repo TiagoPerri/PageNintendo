@@ -104,6 +104,10 @@ function userLogado(){
     return false;
 }
 
+if (userLogado() == true){
+    irPageAPI();
+}
+
 function fazerValidacao(email,password,type){
     
     // credenciais que o ReqRes tem disponivel e aceita para o login
