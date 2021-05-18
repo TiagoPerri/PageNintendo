@@ -53,7 +53,13 @@
 		<div>
 			<br>
 			<br>
-			<h1>A PAGINA QUE VOCE ESTA PROCURANDO NÃO EXISTE (ERROR 404)</h1>
+			<h1>Usuarios cadastrados no banco de dados:</h1>
+			<br>
+			<ul>
+				{{#posts}}
+					<li>login: {{email}} // senha: {{senha}}</li>	
+				{{/posts}}
+			</ul>
 		</div>
 		<div id="contAPI">
 				<div class="containerAPI">			 
