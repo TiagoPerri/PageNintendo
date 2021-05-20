@@ -5,14 +5,34 @@ module.exports = class MongoList{
      static async find(){
           const conn = await MongoClient.connect('mongodb://localhost:27017/nintendo'); // nintendo = banco de dados
           const db = conn.db();
-          return await db.collection('posts').find().toArray();  // posts = tabela
-    }
+          const accounts = await db.collection('posts').find().toArray();  // posts = tabela
+          if(accounts){
+                conn.close();
+                return accounts;
+          }
+          conn.close();
+          return false;     
+       } 
+    
 
     static async insert(theEmail,thePassword){
           const conn = await MongoClient.connect('mongodb://localhost:27017/nintendo'); // nintendo = banco de dados
           const db = conn.db();
+          const accounts = await db.collection('posts').find().toArray();
+
+          function findAccount(account){
+                return account.email === theEmail;
+          }
+          
+          if(accounts.find(findAccount)){
+            conn.close()
+            console.log("conta ja cadastrada");
+            return false;
+          }  
+
           db.collection('posts').insertOne({email : theEmail, senha: thePassword});
           conn.close();
+          return true;
     }
 
     static async doLogin(theEmail,thePassword){
