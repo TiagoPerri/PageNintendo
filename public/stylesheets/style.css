@@ -29,9 +29,12 @@
     width: 23px;
     margin-left: 13px;
 }
-.support a{
+.support a, .cadastroheader a{
     display: flex;
     padding: 15px;
+}
+.cadastroheader i{
+    margin-right: 7px;
 }
 .support i{
     margin-right: 7px;
