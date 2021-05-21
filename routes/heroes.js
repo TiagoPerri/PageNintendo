@@ -2,11 +2,17 @@ var express = require('express');
 var router = express.Router();
 const Heroes = require('../public/javascripts/heroes');
 
-router.get('/', function(req, res, next) { // proteger essa pagina futuramente
+router.get('/', function(req, res, next) { 
+    if(!(req.session && req.session.login)){
+        res.redirect('/login');
+    }
     res.render('add-hero');
 });
 
-router.post('/add', function(req, res, next) { // proteger essa pagina futuramente
+router.post('/add', function(req, res, next) { 
+    if(!(req.session && req.session.login)){
+        res.redirect('/login');
+    }
 
     Heroes.addHero(req).then((result) => {
 

@@ -4,12 +4,10 @@ const MongoList = require('../public/javascripts/mongoList');
 const Validator = require('../public/javascripts/validator');
 var router = express.Router();
 
-router.post('/', async function(req, res, next) {
+router.post('/', async function(req, res, next) { // parte de login
 
   const theEmail = req.body.email_login;
   const thePassword = req.body.password_login;
-  console.log("DADOS: "+theEmail+"");
-  console.log("DADOS: "+thePassword+"");
 
   if(Validator.verify(theEmail,thePassword) == false){
     // futuramente podemos renderizar uma pagina HTML passando como parametro uma mensagem de erro
@@ -18,6 +16,7 @@ router.post('/', async function(req, res, next) {
   }
   else{ // validação de campo OK
     if(await MongoList.doLogin(theEmail,thePassword) == "ok"){ // credenciais constam no banco de dados
+      req.session.login = theEmail;
       res.redirect('/users') // futuramente isso levará para a página de API
     }
     else{

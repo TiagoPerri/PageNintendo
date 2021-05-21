@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 
 module.exports = class MongoList{
-     static async find(){
+     static async find(){ // lista todos os usuarios
           const conn = await MongoClient.connect('mongodb://localhost:27017/nintendo'); // nintendo = banco de dados
           const db = conn.db();
           const accounts = await db.collection('posts').find().toArray();  // posts = tabela
@@ -13,7 +13,7 @@ module.exports = class MongoList{
           return false;     
        } 
     
-    static async insert(theEmail,thePassword){
+    static async insert(theEmail,thePassword){ // insere uma nova conta
           const conn = await MongoClient.connect('mongodb://localhost:27017/nintendo'); // nintendo = banco de dados
           const db = conn.db();
           const accounts = await db.collection('posts').find().toArray();
@@ -33,7 +33,7 @@ module.exports = class MongoList{
           return true;
     }
 
-    static async doLogin(theEmail,thePassword){
+    static async doLogin(theEmail,thePassword){ // faz login
           const conn = await MongoClient.connect('mongodb://localhost:27017/nintendo'); // nintendo = banco de dados
           const db = conn.db();
           var accounts;
@@ -48,8 +48,24 @@ module.exports = class MongoList{
             theResult = "ok";
             console.log("logado com sucesso");
             //setar os cookies para manter a conexão aqui em baixo
+           
           }  
           conn.close();
           return theResult;
+    }
+
+    static async getUser(theEmail){ // retorna um usuario
+          const conn = await MongoClient.connect('mongodb://localhost:27017/nintendo'); // nintendo = banco de dados
+          const db = conn.db();
+          var accounts;
+          accounts = await db.collection('posts').find({name:theEmail}).toArray()
+
+          if(accounts){
+            conn.close();
+            return accounts;
+          }  
+
+          conn.close();
+          return null;
     }
 }
