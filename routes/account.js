@@ -1,10 +1,18 @@
 var express = require('express');
 const { post } = require('./users');
-const MongoList = require('../public/javascripts/mongoList');
+const MongoList = require('../public/models/mongoList');
 const Validator = require('../public/javascripts/validator');
 var router = express.Router();
 
-router.post('/', async function(req, res, next) { // parte de login
+router.get('/login', function(req, res, next) {  //pagina de login
+  res.render('login');
+});
+
+router.get('/register', function(req, res, next) { // pagina de register
+  res.render('register');
+});
+
+router.post('/login/add', async function(req, res, next) { // parte de login (add)
 
   const theEmail = req.body.email_login;
   const thePassword = req.body.password_login;
@@ -27,6 +35,24 @@ router.post('/', async function(req, res, next) { // parte de login
   }
 
 });
+
+router.post('/register/add', async function(req, res, next) { // parte de register (add)
+  const theEmail = req.body.email_cadastro;
+  const thePassword = req.body.password_cadastro;
+  if(Validator.verify(theEmail,thePassword) == false){
+    // futuramente podemos renderizar uma pagina HTML passando como parametro uma mensagem de erro
+    res.send("Nao pode inserir dados em branco");
+    res.end();
+  }
+  else{ // validação de campo OK
+    MongoList.insert(theEmail,thePassword);
+    res.redirect('/users')
+  }
+});
+
+
+
+
 
 
 

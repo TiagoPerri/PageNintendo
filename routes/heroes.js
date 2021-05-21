@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const Heroes = require('../public/javascripts/heroes');
+const Heroes = require('../public/models/heroes');
 
 router.get('/', function(req, res, next) { 
     if(!(req.session && req.session.login)){
@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/add', function(req, res, next) { 
     if(!(req.session && req.session.login)){
-        res.redirect('/login');
+        res.redirect('/account/login');
     }
 
     Heroes.addHero(req).then((result) => {

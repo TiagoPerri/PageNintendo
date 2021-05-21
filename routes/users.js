@@ -1,5 +1,5 @@
 var express = require('express');
-const MongoList = require('../public/javascripts/mongoList');
+const MongoList = require('../public/models/mongoList');
 var router = express.Router();
 
 /* GET users listing. */
