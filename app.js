@@ -14,15 +14,6 @@ var AddHeroRouter = require('./routes/heroes');
 
 var app = express();
 
-// Implementando Session Cookies
-app.use(cookieParser('my_session'));
-app.use(session({
-  secret: 'my_session',
-  resave: false,
-  saveUninitialized: true,
-  cookie: {secure: false}
-}));
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -30,8 +21,16 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Implementando Session Cookies
+app.use(cookieParser('session_secret'));
+app.use(session({
+  secret: 'session_secret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {secure: false}
+}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
