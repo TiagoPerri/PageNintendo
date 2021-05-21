@@ -15,32 +15,36 @@
 		<link rel="stylesheet" href="stylesheets/fonts.css">
 		<link rel="stylesheet" href="stylesheets/login.css">
 		<link rel="stylesheet" href="stylesheets/modal.css">
-		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
 
 		<!--Icons-->
         <script src="https://kit.fontawesome.com/92b73e7f59.js" crossorigin="anonymous"></script>
     </head>
 	<body>
 		<div class="header"> <!-- Header -->
-			<a href="#" class="logo">
+			<a href="./" class="logo">
 				<img src="images/logo_nintendo.png" alt="logo principal da nintendo" />
 			</a>
 			<div class="header-info">
 				<div class="support">
-					<a href="/register">
+					<a href="#">
 						<i class="fas fa-question-circle"></i>
 						<p>Support</p>
+					</a>
+				</div>
+				<div class="cadastro">
+					<a href="./cadastro">
+						<i class="fas fa-user"></i>
+						<p>Criar conta</p>
 					</a>
 				</div>
 				<div class="login">
 					<a href="./login">
 						<i class="fas fa-user"></i>
-						Fazer login
+						<p>Fazer login</p>
 					</a>
 				</div>
 				<div class="hamburguer">
-						<a href="/login">
+						<a href="#">
 							<i class="fas fa-user" style="margin-right: 8px;"></i>
 							<p>Fazer login</p>
 						</a>
@@ -50,11 +54,24 @@
 				</div>
 			</div>
 		</div>
-		<div>
-			<h1 class="h1error">ERROR 404</h1>
-			<h2 class="h2error">A página que você está buscando não existe.</h2>
+		
+        <div id="contAPI">
+			<div> <!-- Busca API -->
+				<div class="containerAPI">			 
+					<h1>API Section</h1>
+					<div class="divSearchAPI">   
+						<input id="queryAPI" type='text' name='busca' value='' placeholder="Digite sua pesquisa"/>
+						<button id="btnAPI">Procurar</button> 
+						
+					</div>
+				</div> 
+			</div>
+			<h1 class="h1API">Resultados da Pesquisa:</h1>
+			<div class="resultadosAPI">	
+				<div id="div-hero"></div> <!-- Add elementos da pesquisa do script aqui-->
+			</div>
 		</div>
-	
+
 	   <footer>
 		   <div class="first-line-footer">
 				<a href="www.nintendo.com">www.nintendo.com</a>
@@ -74,55 +91,7 @@
 		   </div>
 	   </footer>
 
-	   
-		<div class="contModal" id="Modal1">
-			<div class="modal">
-				<button class="fecharModal">X</button>
-				<h1>Login Inválido</h1>
-				<p>E-mail inválido, digite outro E-mail</p>
-			</div>
-		</div>
-
-		<div class="contModal" id="Modal2">
-			<div class="modal">
-				<button class="fecharModal">X</button>
-				<h1>Senha Inválida</h1>
-				<p>Senha vazia. Digite uma senha!</p>
-			</div>
-		</div>
-
-		<div class="contModal" id="Modal3">
-			<div class="modal">
-				<button class="fecharModal">X</button>
-				<h1>Login Inválido</h1>
-				<p>E-mail muito curto</p>
-			</div>
-		</div>
-
-		<div class="contModal" id="Modal4">
-			<div class="modal">
-				<button class="fecharModal">X</button>
-				<h1>Senha Inválida</h1>
-				<p>Senha muito curta</p>
-			</div>
-		</div>
-
-		<div class="contModal" id="Modal5">
-			<div class="modal">
-				<button class="fecharModal">X</button>
-				<h1>Login Inválido</h1>
-				<p>E-mail não pode ficar vazio</p>
-			</div>
-		</div>
-
-		<div class="contModal" id="Modal6">
-			<div class="modal">
-				<button class="fecharModal">X</button>
-				<h1>Login Inválido</h1>
-				<p>Você já está logado. Se quiser sair da sessão clique aqui: <button id= "BtnLogout">Deslogar</button></p>
-			</div>
-	   </div>
-
 	   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	   {{!-- <script src="javascripts/reqRes.js"></script> --}}
 	</body>
 </html>

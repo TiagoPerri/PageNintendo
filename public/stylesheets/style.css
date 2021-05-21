@@ -100,9 +100,6 @@
 /*------------------*/
 
 /*API Section*/
-#contAPI{
-    display: none;
-}
 #contAPI p:first-child{
     font-family: "Museo-Regular";
     font-size: 14px;
@@ -130,6 +127,29 @@
     font-family: "Museo-Sans";
     font-weight: bold;
     margin-bottom: 20px;
+}
+.h1error{
+    font-size: 130px;
+    color:#484848;
+    font-family: "Museo-Sans";
+    font-weight: bold;
+    padding: 80px;
+    margin-bottom: 25px;
+    padding-bottom: 0;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.h2error{
+    font-size: 30px;
+    color:#484848;
+    font-family: "Museo-Sans";
+    font-weight: bold;
+    margin-bottom: 25px;
+    padding-bottom: 50px;
+    width: 80%;
+    margin: auto;
+    text-align: center;  
 }
 #btnAPI{
     background-color:#e60012;
