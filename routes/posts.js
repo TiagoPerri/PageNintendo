@@ -16,9 +16,6 @@ router.post('/', async function(req, res, next) {
     MongoList.insert(theEmail,thePassword);
     res.redirect('/users')
   }
-
 });
-
-
 
 module.exports = router;
