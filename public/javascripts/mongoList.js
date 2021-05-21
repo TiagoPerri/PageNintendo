@@ -1,4 +1,3 @@
-
 const MongoClient = require('mongodb').MongoClient;
 
 module.exports = class MongoList{
@@ -14,7 +13,6 @@ module.exports = class MongoList{
           return false;     
        } 
     
-
     static async insert(theEmail,thePassword){
           const conn = await MongoClient.connect('mongodb://localhost:27017/nintendo'); // nintendo = banco de dados
           const db = conn.db();

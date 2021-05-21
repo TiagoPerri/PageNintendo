@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var RegisterRouter = require('./routes/register');
@@ -12,8 +12,16 @@ var AccountRouter = require('./routes/account');
 var LoginRouter = require('./routes/login');
 var AddHeroRouter = require('./routes/heroes');
 
-
 var app = express();
+
+// Implementando Session Cookies
+app.use(cookieParser('my_session'));
+app.use(session({
+  secret: 'my_session',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {secure: false}
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
