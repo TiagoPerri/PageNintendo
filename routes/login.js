@@ -21,7 +21,7 @@ router.post('/create', async function(req, res, next) { // parte de login (add)
   else{ // validação de campo OK
     if(await MongoList.doLogin(theEmail,thePassword) == "ok"){ // credenciais constam no banco de dados
       req.session.login = theEmail;
-      res.redirect('/users') // futuramente isso levará para a página de API
+      res.redirect('/busca') // futuramente isso levará para a página de API
     }
     else{
       // futuramente colocaremos modal ou pagina HTML passando como parametro msg de erro

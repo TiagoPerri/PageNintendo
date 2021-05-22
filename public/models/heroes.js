@@ -24,7 +24,16 @@ module.exports = class Heroes {
     static async getHero(hero_name){
         const conn = await MongoClient.connect('mongodb://127.0.0.1:27017/nintendo');
         const db = conn.db();
-        return await db.collection('heroes').find({name:hero_name}).toArray();
+        const hero = await db.collection('heroes').find({name:hero_name}).toArray();
+        
+        conn.close();
+        return hero;
+    }
+
+    static async getAllHero(){
+        const conn = await MongoClient.connect('mongodb://127.0.0.1:27017/nintendo');
+        const db = conn.db();
+        return await db.collection('heroes').find().toArray();
     }
 
 }

@@ -56,19 +56,33 @@
 		</div>
 		
         <div id="contAPI">
-			<div> <!-- Busca API -->
-				<div class="containerAPI">			 
-					<h1>API Section</h1>
-					<div class="divSearchAPI">   
-						<input id="queryAPI" type='text' name='busca' value='' placeholder="Digite sua pesquisa"/>
-						<button id="btnAPI">Procurar</button> 
-						
+			<form action="/showhero" method="GET" accept-charset="utf-8">
+				<div class="contLogin">			 
+					<div>      
+						<div id="cadastro">
+								<h1>Login</h1> 
+								<div class="div-input"> 
+									<label for="busca" class="label-geral">Nome Personagem</label>
+									<input id="busca" name="busca" type="text" placeholder="exemplo: batman (capslock faz diferenca)" class="input-geral"/> 
+								</div>	   
+								<div class="div-btn">
+									<input id="BtnSubmit" type="submit" value="BUSCAR">
+								</div>
+						</div>
 					</div>
 				</div> 
-			</div>
+		   </form>
 			<h1 class="h1API">Resultados da Pesquisa:</h1>
 			<div class="resultadosAPI">	
-				<div id="div-hero"></div> <!-- Add elementos da pesquisa do script aqui-->
+				<div id="div-hero">
+				{{#posts}}
+					<li>name: {{name}}
+						poder: {{poder}}
+						velocidade: {{velocidade}}
+						defesa: {{defesa}}
+					</li>	
+				{{/posts}}
+				</div> <!-- Add elementos da pesquisa do script aqui-->
 			</div>
 		</div>
 

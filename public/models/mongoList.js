@@ -13,7 +13,7 @@ module.exports = class MongoList{
           return false;     
        } 
     
-    static async insert(theEmail,thePassword){ // insere uma nova conta
+    static async insert(theEmail,thePassword,group){ // insere uma nova conta
           const conn = await MongoClient.connect('mongodb://localhost:27017/nintendo'); // nintendo = banco de dados
           const db = conn.db();
           const accounts = await db.collection('posts').find().toArray();
@@ -28,7 +28,7 @@ module.exports = class MongoList{
             return false;
           }  
 
-          db.collection('posts').insertOne({email : theEmail, senha: thePassword});
+          db.collection('posts').insertOne({email : theEmail, senha: thePassword, group : group});
           conn.close();
           return true;
     }
@@ -58,7 +58,7 @@ module.exports = class MongoList{
           const conn = await MongoClient.connect('mongodb://localhost:27017/nintendo'); // nintendo = banco de dados
           const db = conn.db();
           var accounts;
-          accounts = await db.collection('posts').find({name:theEmail}).toArray()
+          accounts = await db.collection('posts').find({email:theEmail}).toArray()
 
           if(accounts){
             conn.close();
