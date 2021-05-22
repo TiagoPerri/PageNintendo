@@ -83,6 +83,11 @@
     justify-content: space-around;
     transition: ease-in-out .1s;
 }
+.div-btn .btnComprar{
+    color: white;
+    margin-left: 20px;
+    font-family: "Museo-Sans";
+}
 .btnComprar p{
     color: white; 
     font-size: 16px;
@@ -91,11 +96,6 @@
 .btnComprar i{
     color: white;
     font-size: 23px;
-}
-.btnComprar:hover{
-    background-color: #AC000D;
-    width: 178px;
-    height: 52px;
 }
 /*------------------*/
 
@@ -170,10 +170,13 @@
     border-radius: 4px;
     box-shadow: none;
     border: 1px solid #DADADA;
+    align-self: flex-start;
     width: 380px;
     margin-right: 4px;
 }
-
+#busca{
+    align-self: center;
+}
 /*API Resultados*/
 .resultadosAPI{
     display: flex;
@@ -279,7 +282,14 @@
     border-bottom: 3px solid red;
 }
 /*------------*/
-
+.aviso-p{
+    font-size: 12px;
+    color:#484848;
+    font-family: "Museo-Sans";
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
 /*Footer*/
 footer{
     width: 100%;

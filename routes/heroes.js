@@ -66,7 +66,7 @@ router.post('/add', function(req, res, next) {
             }
         });
     
-        res.redirect('/users'); // futuramente jogar para sessão de busca
+        res.redirect('/busca'); // futuramente jogar para sessão de busca
         res.end();}
     });
 

@@ -36,8 +36,16 @@ height: 350px;
   font-size: 14px;
   font-weight: bold;
   color: #484848;
-  align-self: flex-start;
-  margin-left: 50px;
+  align-self: center;
+  margin-bottom: 5px;
+}
+.label-api{
+  font-family: "Museo-Sans";
+  font-size: 14px;
+  font-weight: bold;
+  color: #484848;
+  align-self: center;
+  margin-bottom: 8px;
 }
 .input-geral{
   height: 45px;

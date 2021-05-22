@@ -31,8 +31,8 @@
 						<p>Support</p>
 					</a>
 				</div>
-				<div class="cadastro">
-					<a href="./cadastro">
+				<div class="cadastroheader">
+					<a href="./register">
 						<i class="fas fa-user"></i>
 						<p>Criar conta</p>
 					</a>
@@ -60,14 +60,17 @@
 				<div class="contLogin">			 
 					<div>      
 						<div id="cadastro">
-								<h1>Login</h1> 
+								<h1>Faça a busca na API</h1> 
 								<div class="div-input"> 
-									<label for="busca" class="label-geral">Nome Personagem</label>
+									<label for="busca" class="label-api">Nome Personagem</label>
 									<input id="busca" name="busca" type="text" placeholder="exemplo: batman (capslock faz diferenca)" class="input-geral"/> 
 								</div>	   
 								<div class="div-btn">
-									<input id="BtnSubmit" type="submit" value="BUSCAR">
+									<input id="BtnSubmit" type="submit" value="Buscar Herói"/>
+									<a class="btnComprar" href="heroes">Cadastrar Herói</a>
 								</div>
+								<p class="aviso-p">Para cadastrar um novo herói você deve ser admin</p>
+								<p class="aviso-p">Cadastre um novo herói para fazer a busca na API.</p>
 						</div>
 					</div>
 				</div> 
@@ -76,11 +79,12 @@
 			<div class="resultadosAPI">	
 				<div id="div-hero">
 				{{#posts}}
-					<li>name: {{name}}
-						poder: {{poder}}
-						velocidade: {{velocidade}}
-						defesa: {{defesa}}
-					</li>	
+					<div class="card-hero">
+						<h1>Nome: {{name}}</h1></a>
+						<p>Poder: {{poder}}</p></a>
+						<p>Velocidade: {{velocidade}}</p>
+						<p>Defesa: {{defesa}}</p> 
+           			</div>
 				{{/posts}}
 				</div> <!-- Add elementos da pesquisa do script aqui-->
 			</div>
